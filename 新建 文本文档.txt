@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的作品集</title>
+    <style>
+        /* ---- 全局样式 ---- */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", sans-serif;
+            background-color: #F8F7FF;
+            color: #333333;
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---- 导航栏 ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(75, 44, 145, 0.9);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        nav a {
+            margin-left: 20px;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #7B5FFF;
+        }
+
+        /* ---- Hero区 ---- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #7B5FFF, #4B2C91);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0.2em 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 0.2em 0 1em 0;
+        }
+        .hero button {
+            background-color: white;
+            color: #4B2C91;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: 0.3s;
+        }
+        .hero button:hover {
+            background-color: #EDEBFF;
+            transform: scale(1.05);
+        }
+
+        /* ---- 作品区 ---- */
+        .portfolio {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .portfolio h2 {
+            text-align: center;
+            color: #4B2C91;
+            margin-bottom: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 100%;
+            display: block;
+        }
+        .card .info {
+            padding: 15px;
+        }
+        .card .info h3 {
+            margin: 0;
+            color: #7B5FFF;
+        }
+        .card .info p {
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* ---- 关于我 ---- */
+        .about {
+            background-color: #F2F0FF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .about h2 {
+            color: #4B2C91;
+            margin-bottom: 30px;
+        }
+
+        /* ---- 联系方式 ---- */
+        .contact {
+            background-color: #4B2C91;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            margin-bottom: 30px;
+        }
+        .contact a {
+            color: #EDEBFF;
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        /* ---- 页脚 ---- */
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ---- 响应式 ---- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">我的作品集</div>
+        <div class="menu">
+            <a href="#portfolio">作品</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <!-- Hero区 -->
+    <section class="hero">
+        <h1>Hi，我是XXX</h1>
+        <p>欢迎浏览我的作品集</p>
+        <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">查看作品</button>
+    </section>
+
+    <!-- 作品展示区 -->
+    <section class="portfolio" id="portfolio">
+        <h2>作品展示</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="作品1">
+                <div class="info">
+                    <h3>作品1</h3>
+                    <p>简短描述作品1</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="作品2">
+                <div class="info">
+                    <h3>作品2</h3>
+                    <p>简短描述作品2</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="作品3">
+                <div class="info">
+                    <h3>作品3</h3>
+                    <p>简短描述作品3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="about" id="about">
+        <h2>关于我</h2>
+        <p>这里写你的自我介绍，比如兴趣、背景、技能等。</p>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+        <h2>联系我</h2>
+        <p>邮箱：<a href="mailto:example@example.com">example@example.com</a></p>
+        <p>社交：<a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        © 2026 我的作品集
+    </footer>
+
+</body>
+</html>
